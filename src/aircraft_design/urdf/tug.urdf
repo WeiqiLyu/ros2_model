@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot name="hd190_tug">
+
+  <link name="tug/base_link">
+    
+    <visual>
+      <origin xyz="1.12 0 0" rpy="1.57 0 1.57"/> 
+      <geometry>
+        <mesh filename="file:///home/student/flight_ws/src/aircraft_design/meshes/hd1901.glb"/>
+      </geometry>
+    </visual>
+
+    <collision>
+      <geometry> <box size="4.80 2.13 0.6"/> </geometry>
+      <origin xyz="1.12 0 0.3"/>
+    </collision>
+
+    <collision>
+      <geometry> <box size="1.5 1.5 0.8"/> </geometry>
+      <origin xyz="1.5 0 1.0"/>
+    </collision>
+
+    <collision>
+      <geometry> <cylinder radius="0.4" length="0.3"/> </geometry>
+      <origin xyz="2.15 0.775 0.4" rpy="1.57 0 0"/>
+    </collision>
+
+    <collision>
+      <geometry> <cylinder radius="0.4" length="0.3"/> </geometry>
+      <origin xyz="2.15 -0.775 0.4" rpy="1.57 0 0"/>
+    </collision>
+
+    <collision>
+      <geometry> <cylinder radius="0.4" length="0.3"/> </geometry>
+      <origin xyz="0 0.775 0.4" rpy="1.57 0 0"/>
+    </collision>
+
+    <collision>
+      <geometry> <cylinder radius="0.4" length="0.3"/> </geometry>
+      <origin xyz="0 -0.775 0.4" rpy="1.57 0 0"/>
+    </collision>
+    
+  </link>
+
+  <link name="tug/hitch_link"/>
+  <joint name="tug_base_to_hitch" type="fixed">
+    <parent link="tug/base_link"/>
+    <child link="tug/hitch_link"/>
+    <origin xyz="-1.28 0 0.3" rpy="0 0 0"/>
+  </joint>
+
+</robot>

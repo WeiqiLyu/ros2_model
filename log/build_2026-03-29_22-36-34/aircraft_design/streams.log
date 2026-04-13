@@ -1,0 +1,26 @@
+[0.342s] Invoking command in '/home/student/flight_ws/build/aircraft_design': PYTHONPATH=/home/student/flight_ws/build/aircraft_design/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/student/flight_ws/build/aircraft_design/build --no-deps symlink_data
+[0.500s] running develop
+[0.580s] running egg_info
+[0.580s] writing aircraft_design.egg-info/PKG-INFO
+[0.580s] writing dependency_links to aircraft_design.egg-info/dependency_links.txt
+[0.581s] writing entry points to aircraft_design.egg-info/entry_points.txt
+[0.582s] writing requirements to aircraft_design.egg-info/requires.txt
+[0.582s] writing top-level names to aircraft_design.egg-info/top_level.txt
+[0.584s] reading manifest file 'aircraft_design.egg-info/SOURCES.txt'
+[0.585s] writing manifest file 'aircraft_design.egg-info/SOURCES.txt'
+[0.587s] running build_ext
+[0.587s] Creating /home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages/aircraft-design.egg-link (link to .)
+[0.588s] Installing csv_trajectory_player script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.588s] Installing dynamic1_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.588s] Installing dynamic2_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.588s] Installing dynamic_hangar_driver script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.588s] Installing dynamic_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.588s] Installing hangar_map_publisher script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.588s] Installing path_publisher script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.588s] Installing simulation_inputs script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.589s] Installing swept_path_mapper script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.589s] Installing trajectory_player script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.589s] 
+[0.589s] Installed /home/student/flight_ws/build/aircraft_design
+[0.589s] running symlink_data
+[0.608s] Invoked command in '/home/student/flight_ws/build/aircraft_design' returned '0': PYTHONPATH=/home/student/flight_ws/build/aircraft_design/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/student/flight_ws/build/aircraft_design/build --no-deps symlink_data
