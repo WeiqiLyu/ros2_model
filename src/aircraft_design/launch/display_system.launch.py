@@ -33,7 +33,8 @@ def generate_launch_description():
         package='tf2_ros',
         executable='static_transform_publisher',
         name='hitch_to_aircraft',
-        arguments=['4.0', '-0.5', '-0.3', '0', '0', '0', 'tug/hitch_link', 'aircraft/base_link']
+        #arguments=['4.0', '-0.5', '-0.3', '0', '0', '0', 'tug/hitch_link', 'aircraft/base_link']
+        arguments=['0', '0', '0', '0', '0', '0', 'tug/hitch_link', 'aircraft/nose_wheel_gear_link']
     ),
 
         # RViz

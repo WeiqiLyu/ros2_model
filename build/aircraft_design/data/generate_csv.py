@@ -1,1 +1,0 @@
-/home/student/flight_ws/src/aircraft_design/data/generate_csv.py

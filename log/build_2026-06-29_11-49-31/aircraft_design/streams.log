@@ -1,0 +1,40 @@
+[0.443s] Invoking command in '/home/student/flight_ws/src/aircraft_design': PYTHONPATH=/home/student/flight_ws/build/aircraft_design/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/aircraft_design build --build-base /home/student/flight_ws/build/aircraft_design/build install --record /home/student/flight_ws/build/aircraft_design/install.log --single-version-externally-managed install_data
+[0.585s] running egg_info
+[0.585s] writing ../../build/aircraft_design/aircraft_design.egg-info/PKG-INFO
+[0.587s] writing dependency_links to ../../build/aircraft_design/aircraft_design.egg-info/dependency_links.txt
+[0.587s] writing entry points to ../../build/aircraft_design/aircraft_design.egg-info/entry_points.txt
+[0.587s] writing requirements to ../../build/aircraft_design/aircraft_design.egg-info/requires.txt
+[0.587s] writing top-level names to ../../build/aircraft_design/aircraft_design.egg-info/top_level.txt
+[0.588s] reading manifest file '../../build/aircraft_design/aircraft_design.egg-info/SOURCES.txt'
+[0.590s] writing manifest file '../../build/aircraft_design/aircraft_design.egg-info/SOURCES.txt'
+[0.590s] running build
+[0.591s] running build_py
+[0.591s] running install
+[0.592s] running install_lib
+[0.594s] running install_data
+[0.594s] copying urdf/aircraft.urdf.xacro -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/urdf
+[0.594s] copying urdf/tractor.urdf.xacro -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/urdf
+[0.594s] copying meshes/aircraft_base.stl -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/meshes
+[0.645s] copying meshes/tractor_hitch.stl -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/meshes
+[0.650s] copying meshes/rear_wheel_group.stl -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/meshes
+[0.660s] copying meshes/aircraft_nose_wheel.stl -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/meshes
+[0.660s] copying meshes/aircraft_right_mlg.stl -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/meshes
+[0.661s] copying meshes/aircraft_left_mlg.stl -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/meshes
+[0.661s] copying meshes/tractor_base.stl -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/meshes
+[0.684s] running install_egg_info
+[0.685s] removing '/home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages/aircraft_design-0.0.0-py3.10.egg-info' (and everything under it)
+[0.685s] Copying ../../build/aircraft_design/aircraft_design.egg-info to /home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages/aircraft_design-0.0.0-py3.10.egg-info
+[0.686s] running install_scripts
+[0.701s] Installing csv_trajectory_player script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.704s] Installing dynamic1_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.704s] Installing dynamic2_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.704s] Installing dynamic_hangar_driver script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.704s] Installing dynamic_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.704s] Installing hangar_dynamic_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.704s] Installing hangar_map_publisher script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.704s] Installing path_publisher script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.704s] Installing simulation_inputs script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.704s] Installing swept_path_mapper script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.704s] Installing trajectory_player script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.704s] writing list of installed files to '/home/student/flight_ws/build/aircraft_design/install.log'
+[0.720s] Invoked command in '/home/student/flight_ws/src/aircraft_design' returned '0': PYTHONPATH=/home/student/flight_ws/build/aircraft_design/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/aircraft_design build --build-base /home/student/flight_ws/build/aircraft_design/build install --record /home/student/flight_ws/build/aircraft_design/install.log --single-version-externally-managed install_data

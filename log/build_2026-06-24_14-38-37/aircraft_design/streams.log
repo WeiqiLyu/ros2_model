@@ -1,0 +1,32 @@
+[0.368s] Invoking command in '/home/student/flight_ws/src/aircraft_design': PYTHONPATH=/home/student/flight_ws/build/aircraft_design/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/aircraft_design build --build-base /home/student/flight_ws/build/aircraft_design/build install --record /home/student/flight_ws/build/aircraft_design/install.log --single-version-externally-managed install_data
+[0.492s] running egg_info
+[0.500s] writing ../../build/aircraft_design/aircraft_design.egg-info/PKG-INFO
+[0.500s] writing dependency_links to ../../build/aircraft_design/aircraft_design.egg-info/dependency_links.txt
+[0.500s] writing entry points to ../../build/aircraft_design/aircraft_design.egg-info/entry_points.txt
+[0.500s] writing requirements to ../../build/aircraft_design/aircraft_design.egg-info/requires.txt
+[0.500s] writing top-level names to ../../build/aircraft_design/aircraft_design.egg-info/top_level.txt
+[0.500s] reading manifest file '../../build/aircraft_design/aircraft_design.egg-info/SOURCES.txt'
+[0.502s] writing manifest file '../../build/aircraft_design/aircraft_design.egg-info/SOURCES.txt'
+[0.502s] running build
+[0.502s] running build_py
+[0.504s] running install
+[0.504s] running install_lib
+[0.508s] running install_data
+[0.508s] copying urdf/aircraft.urdf.xacro -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/urdf
+[0.508s] running install_egg_info
+[0.508s] removing '/home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages/aircraft_design-0.0.0-py3.10.egg-info' (and everything under it)
+[0.509s] Copying ../../build/aircraft_design/aircraft_design.egg-info to /home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages/aircraft_design-0.0.0-py3.10.egg-info
+[0.510s] running install_scripts
+[0.527s] Installing csv_trajectory_player script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.527s] Installing dynamic1_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.527s] Installing dynamic2_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.528s] Installing dynamic_hangar_driver script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.528s] Installing dynamic_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.528s] Installing hangar_dynamic_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.528s] Installing hangar_map_publisher script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.528s] Installing path_publisher script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.528s] Installing simulation_inputs script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.528s] Installing swept_path_mapper script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.528s] Installing trajectory_player script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+[0.528s] writing list of installed files to '/home/student/flight_ws/build/aircraft_design/install.log'
+[0.547s] Invoked command in '/home/student/flight_ws/src/aircraft_design' returned '0': PYTHONPATH=/home/student/flight_ws/build/aircraft_design/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/aircraft_design build --build-base /home/student/flight_ws/build/aircraft_design/build install --record /home/student/flight_ws/build/aircraft_design/install.log --single-version-externally-managed install_data

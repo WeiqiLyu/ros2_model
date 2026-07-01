@@ -1,0 +1,36 @@
+running egg_info
+writing ../../build/aircraft_design/aircraft_design.egg-info/PKG-INFO
+writing dependency_links to ../../build/aircraft_design/aircraft_design.egg-info/dependency_links.txt
+writing entry points to ../../build/aircraft_design/aircraft_design.egg-info/entry_points.txt
+writing requirements to ../../build/aircraft_design/aircraft_design.egg-info/requires.txt
+writing top-level names to ../../build/aircraft_design/aircraft_design.egg-info/top_level.txt
+reading manifest file '../../build/aircraft_design/aircraft_design.egg-info/SOURCES.txt'
+writing manifest file '../../build/aircraft_design/aircraft_design.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+copying urdf/airplane.urdf -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/urdf
+copying data/hangar_dynamic_Right_Turn.csv -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/data
+copying meshes/right_mlg.stl -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/meshes
+copying meshes/nose_wheel.stl -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/meshes
+copying meshes/left_mlg.stl -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/meshes
+copying meshes/fuselage.stl -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/meshes
+copying meshes/main_wing.stl -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/meshes
+running install_egg_info
+removing '/home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages/aircraft_design-0.0.0-py3.10.egg-info' (and everything under it)
+Copying ../../build/aircraft_design/aircraft_design.egg-info to /home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages/aircraft_design-0.0.0-py3.10.egg-info
+running install_scripts
+Installing csv_trajectory_player script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing dynamic1_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing dynamic2_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing dynamic_hangar_driver script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing dynamic_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing hangar_dynamic_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing hangar_map_publisher script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing path_publisher script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing simulation_inputs script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing swept_path_mapper script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing trajectory_player script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+writing list of installed files to '/home/student/flight_ws/build/aircraft_design/install.log'

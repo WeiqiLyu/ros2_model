@@ -1,1 +1,177 @@
-/home/student/flight_ws/build/aircraft_design/parameters/TF6_parameters.json
+{
+  "TowFLEXX_TF6": {
+    "states": {
+      "x": {
+        "description": "Global x-position of the tractor origin (midpoint of rear axle)",
+        "unit": "m",
+        "default": 0.0 
+      },
+      "y": {
+        "description": "Global y-position of the tractor origin (midpoint of rear axle)",
+        "unit": "m",
+        "default": 0.0
+      },
+      "theta": {
+        "description": "Orientation angle of the tractor relative to x-axis",
+        "unit": "rad",
+        "default": -1.57
+      },
+      "phi": {
+        "description": "Angle between the longitudinal axis of the aircraft and tractor",
+        "unit": "rad",
+        "default": 0.0
+      },
+      "v": {
+        "description": "Velocity of tractor in longitudinal direction",
+        "unit": "m/s",
+        "default": 0.0
+      },
+      "delta": {
+        "description": "Steering angle of tractor front wheels",
+        "unit": "rad",
+        "default": 0.0
+      }
+    },
+    "control_inputs": {
+      "omega": {
+        "description": "Yaw rate of the tractor",
+        "unit": "rad/s",
+        "default": 0.1
+      },
+      "a": {
+        "description": "Acceleration of tractor in longitudinal direction",
+        "unit": "m/s²",
+        "default": 0.5
+      },
+      "F": {
+        "description": "Towing force of tractor in longitudinal direction",
+        "unit": "N",
+        "default": 560000
+      }
+    },
+    "control_limits": {
+      "v_max": {
+        "description": "Maximum velocity of tractor",
+        "unit": "m/s",
+        "default": 1.5
+      },
+      "v_min": {
+        "description": "Minimum velocity of tractor",
+        "unit": "m/s",
+        "default": -1.5
+      },
+      "delta_max": {
+        "description": "Maximum steering angle of tractor",
+        "unit": "rad",
+        "default": 1.57
+      },
+      "delta_min": {
+        "description": "Minimum steering angle of tractor",
+        "unit": "rad",
+        "default": -1.57
+      },
+      "v_delta_max": {
+        "description": "Maximum steering angle velocity of tractor",
+        "unit": "rad",
+        "default": 0.7
+      },
+      "v_delta_min": {
+        "description": "Minimum steering angle velocity of tractor",
+        "unit": "rad",
+        "default": -0.7
+      },
+      "a_max": {
+        "description": "Maximum acceleration of tractor",
+        "unit": "m/s²",
+        "default": 1.0
+      },
+      "a_min": {
+        "description": "Minimum acceleration of tractor",
+        "unit": "m/s²",
+        "default": -1.0
+      },
+      "phi_max": {
+        "description": "Maximum hitch angle of aircraft relative to tractor",
+        "unit": "rad",
+        "default": 1.047
+      },
+      "phi_min": {
+        "description": "Minimum hitch angle of aircraft relative to tractor",
+        "unit": "rad",
+        "default": -1.047
+      },
+      "F_max": {
+        "description": "Maximum towing force of tractor",
+        "unit": "N",
+        "default": 843660.0
+      },
+      "F_min": {
+        "description": "Minimum towing force of tractor",
+        "unit": "m/s²",
+        "default": -843660.0
+      }
+    },
+    "parameters": {
+      "m": {
+        "description": "Total mass of the tractor",
+        "unit": "kg",
+        "default": 2300.0
+      },
+      "m_a": {
+        "description": "Front axle mass",
+        "unit": "kg",
+        "default": 869.512
+      },
+      "m_b": {
+        "description": "Rear axle mass",
+        "unit": "kg",
+        "default": 1430.488
+      },
+      "Izz": {
+        "description": "Moment of inertia of the tractor's center of gravity about the vertical axis",
+        "unit": "kg·m²",
+        "default": 30000.0
+      },
+      "L_a": {
+        "description": "Length of the front axle",
+        "unit": "m",
+        "default": 1.00
+      },
+      "L_b": {
+        "description": "Length of the rear axle",
+        "unit": "m",
+        "default": 1.862
+      },
+      "a": {
+        "description": "Distance from center of gravity to front axle",
+        "unit": "m",
+        "default": 1.173
+      },
+      "b": {
+        "description": "Distance from center of gravity to rear axle",
+        "unit": "m",
+        "default": 0.713
+      },
+      "c": {
+        "description": "Distance between midpoint of rear axle and coupling joint axis",
+        "unit": "m",
+        "default": -0.1
+      },
+      "L": {
+        "description": "Wheelbase of the tractor (Distance from rear axle to front axle)",
+        "unit": "m",
+        "default": 1.886
+      },
+      "mu_a": {
+        "description": "Friction coefficient between tractor front wheel and ground",
+        "unit": "-",
+        "default": 0.01
+      },
+      "mu_b": {
+        "description": "Friction coefficient between tractor rear wheel and ground",
+        "unit": "-",
+        "default": 0.01
+      }
+    }
+  }
+}

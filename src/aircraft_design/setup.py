@@ -13,16 +13,12 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         
-        # 1. Copies all your Launch files
         (os.path.join('share', package_name, 'launch'), glob('launch/*.launch.py')),
         
-        # 2. Copies all your URDF models
-        (os.path.join('share', package_name, 'urdf'), glob('urdf/*.urdf')),
+        #Now copies BOTH .urdf and .xacro files!
+        (os.path.join('share', package_name, 'urdf'), glob('urdf/*.urdf') + glob('urdf/*.xacro')),
         
-        # 3. Copies your RViz settings (Crucial for Week 1)
         (os.path.join('share', package_name, 'rviz'), glob('rviz/*.rviz')),
-        
-        # 4. Copies your Trajectory CSV files (Needed for Week 2)
         (os.path.join('share', package_name, 'data'), glob('data/*')),
         (os.path.join('share', package_name, 'parameters'), glob('parameters/*.json')),
         (os.path.join('share', package_name, 'maps'), glob('maps/*')),
@@ -37,8 +33,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            # Registers your Week 2 Trajectory Node
-            
             'trajectory_player = aircraft_design.trajectory_player:main',
             'path_publisher = aircraft_design.path_publisher:main',
             'dynamic_pushback_planner = aircraft_design.dynamic_pushback_planner:main',
