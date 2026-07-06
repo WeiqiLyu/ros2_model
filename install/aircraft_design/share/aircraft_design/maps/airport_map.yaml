@@ -1,7 +1,1 @@
-image: airport_map.png
-mode: trinary
-resolution: 0.1
-origin: [-1112.2997533227317, -752.9542812583968, 0.0]
-negate: 0
-occupied_thresh: 0.65
-free_thresh: 0.196
+/home/student/flight_ws/build/aircraft_design/maps/airport_map.yaml

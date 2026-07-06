@@ -1,14 +1,1 @@
-<?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="pushback_system">
-
-    <xacro:include filename="$(find aircraft_design)/urdf/tractor.urdf.xacro" />
-    <xacro:include filename="$(find aircraft_design)/urdf/aircraft.urdf.xacro" />
-
-    <joint name="tow_joint" type="continuous">
-        <parent link="tractor_hitch_link"/>
-        <child link="aircraft_nose_wheel_link"/>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <axis xyz="0 0 1"/>
-    </joint>
-
-</robot>
+/home/student/flight_ws/build/aircraft_design/urdf/system.urdf.xacro

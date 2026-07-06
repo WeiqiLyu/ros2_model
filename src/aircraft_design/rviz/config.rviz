@@ -34,7 +34,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /aircraft/robot_description_v2
+        Value: /robot_description
       Enabled: true
       Links:
         All Links Enabled: true
@@ -42,22 +42,32 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        aircraft/base_link:
+        aircraft_base_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        aircraft/left_main_gear_link:
+        aircraft_left_mlg_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        aircraft/nose_wheel_link:
+        aircraft_nose_wheel_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        aircraft/right_main_gear_link:
+        aircraft_right_mlg_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tractor_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        tractor_hitch_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -88,15 +98,6 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        tug/base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        tug/hitch_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
       Mass Properties:
         Inertia: false
         Mass: false
@@ -269,7 +270,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: world
+    Fixed Frame: aircraft_base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -284,25 +285,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/XYOrbit
-      Distance: 199.56312561035156
+      Distance: 32.52669906616211
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -679.0535278320312
-        Y: -632.9212646484375
+        X: 0
+        Y: 0
         Z: 0
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5547963380813599
+      Pitch: 0.010398352518677711
       Target Frame: <Fixed Frame>
       Value: XYOrbit (rviz_default_plugins)
-      Yaw: 1.5854992866516113
+      Yaw: 0.865398108959198
     Saved: ~
 Window Geometry:
   Displays:
