@@ -42,7 +42,7 @@ The simulation helps visualize and validate aircraft pushback trajectories, tug 
 
 ## Repository Structure
 
-⁠ text
+⁠```text
 aircraft_design/
 ├── aircraft_design/
 │   ├── __init__.py
@@ -141,7 +141,7 @@ This prevents visual overlap and line blending with the hangar floor map.
 
 Node used:
 
-⁠ bash
+⁠```bash
 csv_trajectory_player.py
  ⁠
 
@@ -162,7 +162,7 @@ csv_trajectory_player.py
 
 Node used:
 
-⁠ bash
+⁠```bash
 tug_trajectory_player.py
  ⁠
 
@@ -179,7 +179,7 @@ tug_trajectory_player.py
 
 The dotted trajectory uses future CSV points from the current index:
 
-⁠ bash
+⁠```bash
 idx to idx + 30
  ⁠
 
@@ -193,25 +193,25 @@ This creates approximately *10 visible blocks* representing the future path of t
 
 ### 1. Source ROS 2 Humble
 
-⁠ bash
+⁠```bash
 source /opt/ros/humble/setup.bash
  ⁠
 
 ### 2. Go to the workspace
 
-⁠ bash
+⁠```bash
 cd ~/flight_ws
  ⁠
 
 ### 3. Build the package
 
-⁠ bash
+⁠```bash
 colcon build --symlink-install
  ⁠
 
 ### 4. Source the workspace
 
-⁠ bash
+⁠```bash
 source install/setup.bash
  ⁠
 
@@ -228,7 +228,7 @@ This launches the complete aircraft pushback simulation with:
 •⁠  ⁠Hangar map
 •⁠  ⁠Dynamic and reference trajectories
 
-⁠ bash
+⁠```bash
 ros2 launch aircraft_design hangar_simulation.launch.py
  ⁠
 
@@ -238,7 +238,7 @@ ros2 launch aircraft_design hangar_simulation.launch.py
 
 This launches only the Towflexx tug with the hangar map and trajectory markers.
 
-⁠ bash
+⁠```bash
 ros2 launch aircraft_design hangar_tug_simulation.launch.py
  ⁠
 
@@ -248,7 +248,7 @@ ros2 launch aircraft_design hangar_tug_simulation.launch.py
 
 This launches the tug model with joint sliders for manual inspection.
 
-⁠ bash
+⁠```bash
 ros2 launch aircraft_design display_tug.launch.py
  ⁠
 
@@ -258,7 +258,7 @@ ros2 launch aircraft_design display_tug.launch.py
 
 This launches the complete aircraft and tug model for visual inspection in RViz.
 
-⁠ bash
+⁠```bash
 ros2 launch aircraft_design system.launch.py
  ⁠
 
@@ -268,13 +268,13 @@ ros2 launch aircraft_design system.launch.py
 
 The main trajectory file is:
 
-⁠ bash
+⁠```bash
 data/trajectories.csv
  ⁠
 
 Other trajectory log files are stored inside:
 
-⁠ bash
+⁠```bash
 data/
  ⁠
 
@@ -284,13 +284,13 @@ data/
 
 RViz configuration files are stored inside:
 
-⁠ bash
+⁠```bash
 rviz/
  ⁠
 
 Main RViz files:
 
-⁠ bash
+```⁠bash
 rviz/pushback.rviz
 rviz/tug_simulation.rviz
 rviz/display_tug.rviz
@@ -302,13 +302,13 @@ rviz/display_tug.rviz
 
 URDF/Xacro files are stored inside:
 
-⁠ bash
+```bash
 urdf/
  ⁠
 
 Main model files:
 
-⁠ bash
+⁠```bash
 urdf/system.urdf.xacro
 urdf/aircraft.urdf.xacro
 urdf/tractor.urdf.xacro
