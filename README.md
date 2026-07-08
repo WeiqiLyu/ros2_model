@@ -49,21 +49,21 @@ The simulation helps visualize and validate aircraft pushback trajectories, tug 
 aircraft_design/
 ├── aircraft_design/
 │   ├── __init__.py
-│   ├── csv_trajectory_player.py
-│   ├── tug_trajectory_player.py
-│   ├── hangar_map_publisher.py
-│   ├── hangar_dynamic_planner.py
-│   └── physics_engine/
+│   ├── csv_trajectory_player.py          # Node: Combined system trajectory and marker broadcaster
+│   ├── tug_trajectory_player.py          # Node: Standalone tug trajectory and marker broadcaster
+│   ├── hangar_map_publisher.py           # Node: OccupancyGrid hangar floor map publisher
+│   ├── hangar_dynamic_planner.py         # Node: Dynamic path planning utility
+│   └── physics_engine/                   # Submodule: Dynamic simulation and kinematics utilities
 ├── data/
-│   ├── trajectories.csv
+│   ├── trajectories.csv                  # Active master dataset with kin_ and dyn_ columns
 │   ├── towing_path_halle_straight_expand_new.csv
 │   ├── towing_path_halle_turn_expand_new.csv
 │   └── dynamic_pushback_log.csv
 ├── launch/
-│   ├── hangar_simulation.launch.py
-│   ├── hangar_tug_simulation.launch.py
-│   ├── display_tug.launch.py
-│   └── system.launch.py
+│   ├── hangar_simulation.launch.py       # Launch: Combined pushback, tug, ATR-42, and map
+│   ├── hangar_tug_simulation.launch.py   # Launch: Standalone tug and map tracking
+│   ├── display_tug.launch.py             # Launch: Standalone tug CAD and joint GUI inspector
+│   └── system.launch.py                  # Launch: Raw state publisher for combined system
 ├── maps/
 │   ├── halle_straight_map.png
 │   ├── halle_straight_map.yaml
@@ -84,10 +84,10 @@ aircraft_design/
 │   ├── tug_simulation.rviz
 │   └── display_tug.rviz
 ├── urdf/
-│   ├── system.urdf.xacro
-│   ├── aircraft.urdf.xacro
-│   ├── tractor.urdf.xacro
-│   └── tug.urdf.xacro
+│   ├── system.urdf.xacro                 # Combined articulated vehicle URDF
+│   ├── aircraft.urdf.xacro               # ATR-42 geometry and link definitions
+│   ├── tractor.urdf.xacro                # Legacy Towflexx tug URDF definitions
+│   └── tug.urdf.xacro                    # Standalone Towflexx tug URDF
 ├── package.xml
 └── setup.py
 ```
