@@ -1,55 +1,66 @@
 # Autonomous Aircraft Pushback & Ground Handling Simulation
 
-A ROS 2 Humble simulation and visualization package for autonomous aircraft ground handling. This repository models the complex kinematics, articulation geometry, and dynamic path tracking of a *Towflexx Clamping Tug* manipulating an *ATR-42 Regional Aircraft* inside an airport hangar environment.
+A ROS 2 Humble simulation and visualization package for autonomous aircraft ground handling.
+
+This repository models the kinematics, articulation geometry, and dynamic path tracking of a *Towflexx Clamping Tug* manipulating an *ATR-42 Regional Aircraft* inside an airport hangar environment.
 
 ---
 
-## Overview & Capabilities
+## Overview
 
-This package translates raw trajectory planning data from ⁠ trajectories.csv ⁠ into a high-fidelity 3D visualization using ⁠ RViz2 ⁠, ⁠ robot_state_publisher ⁠, and custom ROS 2 marker arrays.
+This package converts trajectory planning data from ⁠ trajectories.csv ⁠ into a 3D visualization using:
 
-It allows researchers and engineers to visually validate trajectory planners and tracking controllers by projecting predicted dynamic paths against ideal kinematic reference baselines.
+•⁠  ⁠⁠ RViz2 ⁠
+•⁠  ⁠⁠ robot_state_publisher ⁠
+•⁠  ⁠Custom ROS 2 marker arrays
+•⁠  ⁠URDF/Xacro vehicle models
+•⁠  ⁠Hangar occupancy grid maps
+
+The simulation helps visualize and validate aircraft pushback trajectories, tug motion, steering behavior, and reference path tracking.
 
 ---
 
 ## Key Features
 
-•⁠  ⁠*Dual-Mode Simulation Architecture*
-  - *Combined Articulated System:* Simulates the Towflexx tug clamping the ATR-42 nose wheel, tracking both active dynamic steering and global reference corridors across all landing gears.
-  - *Standalone Tug Mode:* Decouples the Towflexx tug for independent controller validation, steering limit verification, and chassis kinematics without aircraft visual clutter.
+•⁠  ⁠*Combined Aircraft + Tug Simulation*
+  - Simulates the Towflexx tug clamping the ATR-42 nose wheel.
+  - Tracks dynamic and reference trajectories for aircraft landing gear positions.
 
-•⁠  ⁠*Unified Control Point Kinematics*
-  - Simplifies vehicle tracking by collapsing the tug rear axle center, clamping cradle rotation center, and base link origin into a single unified coordinate: ⁠ (0, 0, 0) ⁠.
+•⁠  ⁠*Standalone Tug Simulation*
+  - Simulates only the Towflexx tug.
+  - Useful for validating tug controller behavior without aircraft mesh interference.
 
-•⁠  ⁠*High-Contrast RViz Styling*
-  - Implements a strict multi-layer visual hierarchy in RViz to eliminate Z-fighting against light-colored hangar occupancy grids.
+•⁠  ⁠*Predictive Lookahead Path*
+  - Shows the planned trajectory *30 time steps ahead*.
+  - At 20 Hz, this corresponds to approximately *1.5 seconds* of future motion.
 
-•⁠  ⁠*Predictive Dotted Lookahead*
-  - Dynamically projects the vehicle's planned trajectory exactly *30 time steps, approximately **1.5 seconds at 20 Hz*, ahead of the rolling tires.
+•⁠  ⁠*RViz Marker Visualization*
+  - Displays planned paths, reference paths, start pose, and end pose.
+  - Uses high-contrast colors for better visibility on hangar maps.
 
 ---
 
 ## Repository Structure
 
-⁠```text
+⁠ text
 aircraft_design/
 ├── aircraft_design/
 │   ├── __init__.py
-│   ├── csv_trajectory_player.py          # Node: Combined system trajectory and marker broadcaster
-│   ├── tug_trajectory_player.py          # Node: Standalone tug trajectory and marker broadcaster
-│   ├── hangar_map_publisher.py           # Node: OccupancyGrid hangar floor map publisher
-│   ├── hangar_dynamic_planner.py         # Node: Dynamic path planning utility
-│   └── physics_engine/                   # Submodule: Dynamic simulation and kinematics utilities
+│   ├── csv_trajectory_player.py
+│   ├── tug_trajectory_player.py
+│   ├── hangar_map_publisher.py
+│   ├── hangar_dynamic_planner.py
+│   └── physics_engine/
 ├── data/
-│   ├── trajectories.csv                  # Active master dataset with kin_ and dyn_ columns
+│   ├── trajectories.csv
 │   ├── towing_path_halle_straight_expand_new.csv
 │   ├── towing_path_halle_turn_expand_new.csv
 │   └── dynamic_pushback_log.csv
 ├── launch/
-│   ├── hangar_simulation.launch.py       # Launch: Combined pushback, tug, ATR-42, and map
-│   ├── hangar_tug_simulation.launch.py   # Launch: Standalone tug and map tracking
-│   ├── display_tug.launch.py             # Launch: Standalone tug CAD and joint GUI inspector
-│   └── system.launch.py                  # Launch: Raw state publisher for combined system
+│   ├── hangar_simulation.launch.py
+│   ├── hangar_tug_simulation.launch.py
+│   ├── display_tug.launch.py
+│   └── system.launch.py
 ├── maps/
 │   ├── halle_straight_map.png
 │   ├── halle_straight_map.yaml
@@ -70,89 +81,135 @@ aircraft_design/
 │   ├── tug_simulation.rviz
 │   └── display_tug.rviz
 ├── urdf/
-│   ├── system.urdf.xacro                 # Combined articulated vehicle URDF
-│   ├── aircraft.urdf.xacro               # ATR-42 geometry and link definitions
-│   ├── tractor.urdf.xacro                # Legacy Towflexx tug URDF definitions
-│   └── tug.urdf.xacro                    # Standalone Towflexx tug URDF
+│   ├── system.urdf.xacro
+│   ├── aircraft.urdf.xacro
+│   ├── tractor.urdf.xacro
+│   └── tug.urdf.xacro
 ├── package.xml
 └── setup.py
  ⁠
 
 ---
 
+## Main ROS 2 Nodes
+
+### ⁠ csv_trajectory_player.py ⁠
+
+Used for the *combined aircraft and tug simulation*.
+
+It publishes:
+
+•⁠  ⁠Aircraft and tug motion
+•⁠  ⁠Dynamic planned trajectory
+•⁠  ⁠Reference trajectory
+•⁠  ⁠Start and end pose markers
+•⁠  ⁠Landing gear path markers
+
+### ⁠ tug_trajectory_player.py ⁠
+
+Used for the *standalone tug simulation*.
+
+It publishes:
+
+•⁠  ⁠Tug motion
+•⁠  ⁠Tug center trajectory
+•⁠  ⁠Reference tug path
+•⁠  ⁠Start and end pose markers
+
+### ⁠ hangar_map_publisher.py ⁠
+
+Publishes the hangar map as an occupancy grid for RViz visualization.
+
+### ⁠ hangar_dynamic_planner.py ⁠
+
+Contains dynamic path planning utilities for pushback trajectory generation.
+
+---
+
 ## Trajectory & Marker Hierarchy
 
-To maximize visual separation and prevent line blending, all paths are separated by Z-elevation:
+To improve visibility in RViz, paths are separated by height:
 
-•⁠  ⁠Reference corridors: ⁠ Z = 0.20 m ⁠
-•⁠  ⁠Dynamic lookahead blocks: ⁠ Z = 0.30 m ⁠
+•⁠  ⁠Reference paths: ⁠ Z = 0.20 m ⁠
+•⁠  ⁠Dynamic lookahead paths: ⁠ Z = 0.30 m ⁠
 
-The visualization follows a bold, high-contrast color palette for better readability in RViz.
-
----
-
-## 1. Combined Articulated System
-
-Node used: ⁠ csv_trajectory_player ⁠
-
-| Marker Content | Marker ID | Line Style | Line Width | Assigned Color | RGB Values ⁠ (r, g, b) ⁠ |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| *Planned Center Axle: 30-Step* | ⁠ 0 ⁠ | *Dotted* | ⁠ 0.50 m ⁠ | *Deep Blue* | ⁠ (0.0, 0.10, 0.95) ⁠ |
-| *Planned Left MLG: 30-Step* | ⁠ 1 ⁠ | *Dotted* | ⁠ 0.50 m ⁠ | *Electric Sky Blue* | ⁠ (0.0, 0.75, 1.00) ⁠ |
-| *Planned Right MLG: 30-Step* | ⁠ 2 ⁠ | *Dotted* | ⁠ 0.50 m ⁠ | *Electric Sky Blue* | ⁠ (0.0, 0.75, 1.00) ⁠ |
-| *Reference Center Axle* | ⁠ 10 ⁠ | *Solid* | ⁠ 0.25 m ⁠ | *Emerald Green* | ⁠ (0.0, 0.55, 0.15) ⁠ |
-| *Reference Left MLG* | ⁠ 11 ⁠ | *Solid* | ⁠ 0.25 m ⁠ | *Crisp Mint Green* | ⁠ (0.25, 0.95, 0.25) ⁠ |
-| *Reference Right MLG* | ⁠ 12 ⁠ | *Solid* | ⁠ 0.25 m ⁠ | *Crisp Mint Green* | ⁠ (0.25, 0.95, 0.25) ⁠ |
-| *Start Pose: Nose Hitch* | ⁠ 20 ⁠ | *Arrow* | ⁠ 3.00 m ⁠ | *Bold Yellow* | ⁠ (1.0, 0.90, 0.0) ⁠ |
-| *End Pose: Nose Hitch* | ⁠ 21 ⁠ | *Arrow* | ⁠ 3.00 m ⁠ | *Bold Red* | ⁠ (0.95, 0.10, 0.10) ⁠ |
+This prevents visual overlap and line blending with the hangar floor map.
 
 ---
 
-## 2. Standalone Tug Simulation
+## Combined Aircraft + Tug Markers
 
-Node used: ⁠ tug_trajectory_player ⁠
+Node used:
 
-| Marker Content | Marker ID | Line Style | Line Width | Assigned Color | RGB Values ⁠ (r, g, b) ⁠ |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| *Planned Tug Center: 30-Step* | ⁠ 0 ⁠ | *Dotted* | ⁠ 0.50 m ⁠ | *Dark Blue* | ⁠ (0.0, 0.15, 0.85) ⁠ |
-| *Global Reference Tug Center* | ⁠ 10 ⁠ | *Solid* | ⁠ 0.25 m ⁠ | *Solid Green* | ⁠ (0.0, 0.70, 0.15) ⁠ |
-| *Start / End Poses* | ⁠ 20 ⁠ / ⁠ 21 ⁠ | *Arrow* | ⁠ 2.50 m ⁠ | *Yellow / Red* | ⁠ (1.0, 0.9, 0.0) ⁠ / ⁠ (0.95, 0.1, 0.1) ⁠ |
+⁠ bash
+csv_trajectory_player.py
+ ⁠
+
+| Marker Content | Marker ID | Line Style | Line Width | Color |
+| :--- | :--- | :--- | :--- | :--- |
+| Planned Center Axle | ⁠ 0 ⁠ | Dotted | ⁠ 0.50 m ⁠ | Deep Blue |
+| Planned Left Main Landing Gear | ⁠ 1 ⁠ | Dotted | ⁠ 0.50 m ⁠ | Electric Sky Blue |
+| Planned Right Main Landing Gear | ⁠ 2 ⁠ | Dotted | ⁠ 0.50 m ⁠ | Electric Sky Blue |
+| Reference Center Axle | ⁠ 10 ⁠ | Solid | ⁠ 0.25 m ⁠ | Emerald Green |
+| Reference Left Main Landing Gear | ⁠ 11 ⁠ | Solid | ⁠ 0.25 m ⁠ | Mint Green |
+| Reference Right Main Landing Gear | ⁠ 12 ⁠ | Solid | ⁠ 0.25 m ⁠ | Mint Green |
+| Start Pose | ⁠ 20 ⁠ | Arrow | ⁠ 3.00 m ⁠ | Yellow |
+| End Pose | ⁠ 21 ⁠ | Arrow | ⁠ 3.00 m ⁠ | Red |
+
+---
+
+## Standalone Tug Markers
+
+Node used:
+
+⁠ bash
+tug_trajectory_player.py
+ ⁠
+
+| Marker Content | Marker ID | Line Style | Line Width | Color |
+| :--- | :--- | :--- | :--- | :--- |
+| Planned Tug Center | ⁠ 0 ⁠ | Dotted | ⁠ 0.50 m ⁠ | Dark Blue |
+| Reference Tug Center | ⁠ 10 ⁠ | Solid | ⁠ 0.25 m ⁠ | Solid Green |
+| Start Pose | ⁠ 20 ⁠ | Arrow | ⁠ 2.50 m ⁠ | Yellow |
+| End Pose | ⁠ 21 ⁠ | Arrow | ⁠ 2.50 m ⁠ | Red |
 
 ---
 
 ## Dotted Lookahead Logic
 
-Dotted trajectories use ⁠ LINE_LIST ⁠ markers and are generated by slicing the future CSV horizon from:
+The dotted trajectory uses future CSV points from the current index:
 
-⁠ text
+⁠ bash
 idx to idx + 30
  ⁠
 
-The marker generation steps through the array in increments of ⁠ 3 ⁠. This means the visualization draws one row and skips two rows, resulting in *10 bold half-meter-wide tarmac blocks* floating above the green reference baseline.
+The marker publisher skips every few rows to create a dotted effect.
+
+This creates approximately *10 visible blocks* representing the future path of the vehicle.
 
 ---
 
 ## Build & Installation
 
-### 1. Source the ROS 2 Environment
+### 1. Source ROS 2 Humble
 
 ⁠ bash
 source /opt/ros/humble/setup.bash
  ⁠
 
-### 2. Navigate to the Workspace
+### 2. Go to the workspace
 
 ⁠ bash
 cd ~/flight_ws
  ⁠
 
-### 3. Build the Package
+### 3. Build the package
 
 ⁠ bash
 colcon build --symlink-install
  ⁠
 
-### 4. Source the Workspace
+### 4. Source the workspace
 
 ⁠ bash
 source install/setup.bash
@@ -164,7 +221,12 @@ source install/setup.bash
 
 ### 1. Full Hangar Pushback Simulation
 
-This launch file spawns the ATR-42 clamped into the Towflexx tug, broadcasts the hangar floor map, and animates the vehicle along the 30-step predictive corridor.
+This launches the complete aircraft pushback simulation with:
+
+•⁠  ⁠Towflexx tug
+•⁠  ⁠ATR-42 aircraft
+•⁠  ⁠Hangar map
+•⁠  ⁠Dynamic and reference trajectories
 
 ⁠ bash
 ros2 launch aircraft_design hangar_simulation.launch.py
@@ -174,7 +236,7 @@ ros2 launch aircraft_design hangar_simulation.launch.py
 
 ### 2. Standalone Tug Simulation
 
-This launch file spawns only the Towflexx tug on the hangar map. It broadcasts the unified center axle trajectory without aircraft mesh interference.
+This launches only the Towflexx tug with the hangar map and trajectory markers.
 
 ⁠ bash
 ros2 launch aircraft_design hangar_tug_simulation.launch.py
@@ -184,7 +246,7 @@ ros2 launch aircraft_design hangar_tug_simulation.launch.py
 
 ### 3. Standalone Tug CAD & Joint Inspector
 
-This launch file opens an isolated inspection setup with a GUI slider using ⁠ joint_state_publisher_gui ⁠. It is used to manually test the clamping cradle rotation limits of approximately ⁠ ±90° ⁠.
+This launches the tug model with joint sliders for manual inspection.
 
 ⁠ bash
 ros2 launch aircraft_design display_tug.launch.py
@@ -194,7 +256,7 @@ ros2 launch aircraft_design display_tug.launch.py
 
 ### 4. Combined System CAD Inspector
 
-This launch file opens the combined articulated aircraft and tug assembly in an isolated RViz view.
+This launches the complete aircraft and tug model for visual inspection in RViz.
 
 ⁠ bash
 ros2 launch aircraft_design system.launch.py
@@ -202,17 +264,55 @@ ros2 launch aircraft_design system.launch.py
 
 ---
 
-## Notes
+## Input Data
 
-•⁠  ⁠Make sure the package is built successfully before launching any simulation.
-•⁠  ⁠Always source both ROS 2 Humble and the workspace before running launch commands.
-•⁠  ⁠The main trajectory input file is located at:
+The main trajectory file is:
 
-⁠ text
+⁠ bash
 data/trajectories.csv
  ⁠
 
-•⁠  ⁠The RViz configuration files are located in:
+Other trajectory log files are stored inside:
 
-⁠ text
+⁠ bash
+data/
+ ⁠
+
+---
+
+## RViz Configurations
+
+RViz configuration files are stored inside:
+
+⁠ bash
 rviz/
+ ⁠
+
+Main RViz files:
+
+⁠ bash
+rviz/pushback.rviz
+rviz/tug_simulation.rviz
+rviz/display_tug.rviz
+ ⁠
+
+---
+
+## URDF Models
+
+URDF/Xacro files are stored inside:
+
+⁠ bash
+urdf/
+ ⁠
+
+Main model files:
+
+⁠ bash
+urdf/system.urdf.xacro
+urdf/aircraft.urdf.xacro
+urdf/tractor.urdf.xacro
+urdf/tug.urdf.xacro
+ ⁠
+
+---
