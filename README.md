@@ -119,27 +119,27 @@ The marker generation steps through the array in increments of ⁠ 3 ⁠. Th
 
 ### 1. Source the ROS 2 Environment
 
-⁠ bash
+⁠```bash
 source /opt/ros/humble/setup.bash
- ⁠
-
+``` ⁠
+---
 ### 2. Navigate to the Workspace
 
-⁠ bash
+⁠```bash
 cd ~/flight_ws
- ⁠
-
+``` ⁠
+---
 ### 3. Build the Package
 
-⁠ bash
+⁠```bash
 colcon build --symlink-install
- ⁠
-
+```⁠
+---
 ### 4. Source the Workspace
 
-⁠ bash
+⁠```bash
 source install/setup.bash
- ⁠
+```⁠
 
 ---
 
@@ -151,7 +151,7 @@ This launch file spawns the ATR-42 clamped into the Towflexx tug, broadcasts the
 
 ⁠```bash
 ros2 launch aircraft_design hangar_simulation.launch.py
-⁠
+⁠```
 ---
 
 ### 2. Standalone Tug Simulation
