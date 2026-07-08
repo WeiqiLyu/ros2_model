@@ -62,7 +62,7 @@ aircraft_design/
 ├── package.xml
 └── setup.py
 
----
+```
 
 ## Trajectory & Marker Hierarchy
 
@@ -115,3 +115,87 @@ idx to idx + 30
 The marker generation steps through the array in increments of ⁠ 3 ⁠. This means the visualization draws one row and skips two rows, resulting in *10 bold half-meter-wide tarmac blocks* floating above the green reference baseline.
 
 ---
+## Build & Installation
+
+### 1. Source the ROS 2 Environment
+
+⁠ bash
+source /opt/ros/humble/setup.bash
+ ⁠
+
+### 2. Navigate to the Workspace
+
+⁠ bash
+cd ~/flight_ws
+ ⁠
+
+### 3. Build the Package
+
+⁠ bash
+colcon build --symlink-install
+ ⁠
+
+### 4. Source the Workspace
+
+⁠ bash
+source install/setup.bash
+ ⁠
+
+---
+
+## Launch Commands
+
+### 1. Full Hangar Pushback Simulation
+
+This launch file spawns the ATR-42 clamped into the Towflexx tug, broadcasts the hangar floor map, and animates the vehicle along the 30-step predictive corridor.
+
+⁠ bash
+ros2 launch aircraft_design hangar_simulation.launch.py
+ ⁠
+
+---
+
+### 2. Standalone Tug Simulation
+
+This launch file spawns only the Towflexx tug on the hangar map. It broadcasts the unified center axle trajectory without aircraft mesh interference.
+
+⁠ bash
+ros2 launch aircraft_design hangar_tug_simulation.launch.py
+ ⁠
+
+---
+
+### 3. Standalone Tug CAD & Joint Inspector
+
+This launch file opens an isolated inspection setup with a GUI slider using ⁠ joint_state_publisher_gui ⁠. It is used to manually test the clamping cradle rotation limits of approximately ⁠ ±90° ⁠.
+
+⁠ bash
+ros2 launch aircraft_design display_tug.launch.py
+ ⁠
+
+---
+
+### 4. Combined System CAD Inspector
+
+This launch file opens the combined articulated aircraft and tug assembly in an isolated RViz view.
+
+⁠ bash
+ros2 launch aircraft_design system.launch.py
+ ⁠
+
+---
+
+## Notes
+
+•⁠  ⁠Make sure the package is built successfully before launching any simulation.
+•⁠  ⁠Always source both ROS 2 Humble and the workspace before running launch commands.
+•⁠  ⁠The main trajectory input file is located at:
+
+⁠ text
+data/trajectories.csv
+ ⁠
+
+•⁠  ⁠The RViz configuration files are located in:
+
+⁠ text
+rviz/
