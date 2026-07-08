@@ -31,7 +31,7 @@ It allows researchers and engineers to visually validate trajectory planners and
 
 ## Repository Structure
 
-⁠ text
+⁠```text
 aircraft_design/
 ├── aircraft_design/
 │   ├── __init__.py
