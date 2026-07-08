@@ -42,6 +42,7 @@ setup(
             'swept_path_mapper = aircraft_design.swept_path_mapper:main',
             'hangar_map_publisher = aircraft_design.hangar_map_publisher:main',
             'csv_trajectory_player = aircraft_design.csv_trajectory_player:main',
+            'tug_trajectory_player = aircraft_design.tug_trajectory_player:main',
             'dynamic_hangar_driver = aircraft_design.dynamic_hangar_driver:main',
             'hangar_dynamic_planner = aircraft_design.hangar_dynamic_planner:main',
         ],

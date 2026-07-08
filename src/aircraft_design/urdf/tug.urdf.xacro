@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="tug">
+
+    <link name="tug_base_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://aircraft_design/meshes/tractor_base.stl" scale="1 1 1"/>
+            </geometry>
+            <material name="dark_grey">
+                <color rgba="0.2 0.2 0.2 1.0"/>
+            </material>
+        </visual>
+        <visual>
+            <geometry>
+                <mesh filename="package://aircraft_design/meshes/rear_wheel_group.stl" scale="1 1 1"/>
+            </geometry>
+            <material name="black">
+                <color rgba="0.1 0.1 0.1 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <link name="tug_hitch_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://aircraft_design/meshes/tractor_hitch.stl" scale="1 1 1"/>
+            </geometry>
+            <material name="grey">
+                <color rgba="0.6 0.6 0.6 1.0"/>
+            </material>
+        </visual>
+    </link>
+
+    <joint name="tug_base_to_hitch" type="fixed">
+        <parent link="tug_base_link"/>
+        <child link="tug_hitch_link"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>
+
+</robot>

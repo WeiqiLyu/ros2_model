@@ -10,4 +10,5 @@ path_publisher = aircraft_design.path_publisher:main
 simulation_inputs = aircraft_design.simulation_inputs:main
 swept_path_mapper = aircraft_design.swept_path_mapper:main
 trajectory_player = aircraft_design.trajectory_player:main
+tug_trajectory_player = aircraft_design.tug_trajectory_player:main
 

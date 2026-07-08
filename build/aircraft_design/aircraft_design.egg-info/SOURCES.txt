@@ -5,6 +5,7 @@ aircraft_design/__init__.py
 aircraft_design/csv_trajectory_player.py
 aircraft_design/hangar_dynamic_planner.py
 aircraft_design/hangar_map_publisher.py
+aircraft_design/tug_trajectory_player.py
 aircraft_design.egg-info/PKG-INFO
 aircraft_design.egg-info/SOURCES.txt
 aircraft_design.egg-info/dependency_links.txt
@@ -25,7 +26,9 @@ data/dynamic_pushback_log.csv
 data/towing_path_halle_straight_expand_new.csv
 data/towing_path_halle_turn_expand_new.csv
 data/trajectories.csv
+launch/display_tug.launch.py
 launch/hangar_simulation.launch.py
+launch/hangar_tug_simulation.launch.py
 launch/system.launch.py
 maps/airport_map.png
 maps/airport_map.yaml
@@ -34,6 +37,7 @@ maps/halle_straight_map.yaml
 maps/test_turn_map.png
 maps/test_turn_map.yaml
 meshes/aircraft_base.stl
+meshes/aircraft_base1.stl
 meshes/aircraft_left_mlg.stl
 meshes/aircraft_nose_wheel.stl
 meshes/aircraft_right_mlg.stl
@@ -47,3 +51,4 @@ rviz/config.rviz
 urdf/aircraft.urdf.xacro
 urdf/system.urdf.xacro
 urdf/tractor.urdf.xacro
+urdf/tug.urdf.xacro

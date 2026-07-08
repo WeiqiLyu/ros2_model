@@ -1,0 +1,25 @@
+running develop
+running egg_info
+writing aircraft_design.egg-info/PKG-INFO
+writing dependency_links to aircraft_design.egg-info/dependency_links.txt
+writing entry points to aircraft_design.egg-info/entry_points.txt
+writing requirements to aircraft_design.egg-info/requires.txt
+writing top-level names to aircraft_design.egg-info/top_level.txt
+reading manifest file 'aircraft_design.egg-info/SOURCES.txt'
+writing manifest file 'aircraft_design.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/student/flight_ws/install/aircraft_design/lib/python3.10/site-packages/aircraft-design.egg-link (link to .)
+Installing csv_trajectory_player script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing dynamic1_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing dynamic2_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing dynamic_hangar_driver script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing dynamic_pushback_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing hangar_dynamic_planner script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing hangar_map_publisher script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing path_publisher script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing simulation_inputs script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing swept_path_mapper script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+Installing trajectory_player script to /home/student/flight_ws/install/aircraft_design/lib/aircraft_design
+
+Installed /home/student/flight_ws/build/aircraft_design
+running symlink_data
