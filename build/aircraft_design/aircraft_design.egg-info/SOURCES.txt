@@ -37,7 +37,6 @@ maps/halle_straight_map.yaml
 maps/test_turn_map.png
 maps/test_turn_map.yaml
 meshes/aircraft_base.stl
-meshes/aircraft_base1.stl
 meshes/aircraft_left_mlg.stl
 meshes/aircraft_nose_wheel.stl
 meshes/aircraft_right_mlg.stl
