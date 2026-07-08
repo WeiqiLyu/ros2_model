@@ -1,6 +1,3 @@
-Here is your complete, error-free `README.md` file in a single raw code block. Click the **Copy code** button at the top right of the box below and paste it directly into your VS Code editor:
-
-```markdown
 # Autonomous Aircraft Pushback & Ground Handling Simulation
 
 A ROS 2 Humble simulation and visualization package for autonomous aircraft ground handling.
