@@ -151,7 +151,7 @@ This launch file spawns the ATR-42 clamped into the Towflexx tug, broadcasts the
 
 ⁠```bash
 ros2 launch aircraft_design hangar_simulation.launch.py
-``` ⁠
+⁠
 ---
 
 ### 2. Standalone Tug Simulation
@@ -160,7 +160,7 @@ This launch file spawns only the Towflexx tug on the hangar map. It broadcasts t
 
 ⁠```bash
 ros2 launch aircraft_design hangar_tug_simulation.launch.py
-```⁠
+
 
 ---
 
@@ -170,7 +170,7 @@ This launch file opens an isolated inspection setup with a GUI slider using ⁠�
 
 ⁠```bash
 ros2 launch aircraft_design display_tug.launch.py
-``` ⁠
+ ⁠
 
 ---
 
@@ -180,7 +180,7 @@ This launch file opens the combined articulated aircraft and tug assembly in an 
 
 ⁠```bash
 ros2 launch aircraft_design system.launch.py
- ```⁠
+ 
 
 ---
 
@@ -192,10 +192,11 @@ ros2 launch aircraft_design system.launch.py
 
 ⁠```text
 data/trajectories.csv
-```⁠
+
 
 •⁠  ⁠The RViz configuration files are located in:
 
 ⁠```text
 rviz/
+
 ```
