@@ -149,7 +149,7 @@ source install/setup.bash
 
 This launch file spawns the ATR-42 clamped into the Towflexx tug, broadcasts the hangar floor map, and animates the vehicle along the 30-step predictive corridor.
 
-⁠ bash
+⁠```bash
 ros2 launch aircraft_design hangar_simulation.launch.py
  ⁠
 
@@ -159,7 +159,7 @@ ros2 launch aircraft_design hangar_simulation.launch.py
 
 This launch file spawns only the Towflexx tug on the hangar map. It broadcasts the unified center axle trajectory without aircraft mesh interference.
 
-⁠ bash
+⁠```bash
 ros2 launch aircraft_design hangar_tug_simulation.launch.py
  ⁠
 
@@ -169,7 +169,7 @@ ros2 launch aircraft_design hangar_tug_simulation.launch.py
 
 This launch file opens an isolated inspection setup with a GUI slider using ⁠ joint_state_publisher_gui ⁠. It is used to manually test the clamping cradle rotation limits of approximately ⁠ ±90° ⁠.
 
-⁠ bash
+⁠```bash
 ros2 launch aircraft_design display_tug.launch.py
  ⁠
 
@@ -179,7 +179,7 @@ ros2 launch aircraft_design display_tug.launch.py
 
 This launch file opens the combined articulated aircraft and tug assembly in an isolated RViz view.
 
-⁠ bash
+⁠```bash
 ros2 launch aircraft_design system.launch.py
  ⁠
 
@@ -191,11 +191,11 @@ ros2 launch aircraft_design system.launch.py
 •⁠  ⁠Always source both ROS 2 Humble and the workspace before running launch commands.
 •⁠  ⁠The main trajectory input file is located at:
 
-⁠ text
+⁠```text
 data/trajectories.csv
  ⁠
 
 •⁠  ⁠The RViz configuration files are located in:
 
-⁠ text
+⁠```text
 rviz/
