@@ -24,3 +24,4 @@ Installing tug_trajectory_player script to /home/student/flight_ws/install/aircr
 
 Installed /home/student/flight_ws/build/aircraft_design
 running symlink_data
+symbolically linking /home/student/flight_ws/build/aircraft_design/rviz/tug.rviz -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/rviz

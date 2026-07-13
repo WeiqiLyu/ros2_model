@@ -47,6 +47,9 @@ parameters/ATR42_300_parameters.json
 parameters/TF6_parameters.json
 resource/aircraft_design
 rviz/config.rviz
+rviz/pushback.rviz
+rviz/tug.rviz
+rviz/tug_simulation.rviz
 urdf/aircraft.urdf.xacro
 urdf/system.urdf.xacro
 urdf/tractor.urdf.xacro

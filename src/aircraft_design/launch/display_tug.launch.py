@@ -25,8 +25,13 @@ def generate_launch_description():
         name='joint_state_publisher_gui'
     )
 
-    # Isolated RViz config: Will never interfere with pushback.rviz!
-    rviz_config = os.path.join(pkg_share, 'rviz', 'display_tug.rviz')
+    # Isolated RViz config (Forced to SRC directory so Ctrl+S saves permanently!)
+    src_dir = os.path.expanduser('~/flight_ws/src/aircraft_design')
+    rviz_config = os.path.join(src_dir, 'rviz', 'tug.rviz')
+    
+    # Create the file instantly if it doesn't exist yet, avoiding RViz crash
+    if not os.path.exists(rviz_config):
+        open(rviz_config, 'a').close()
     
     rviz_node = Node(
         package='rviz2',

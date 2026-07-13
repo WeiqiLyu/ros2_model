@@ -42,8 +42,14 @@ def generate_launch_description():
         ]
     )
 
-    # 4. Isolated RViz config: Guaranteed zero interference with aircraft configs!
-    rviz_config = os.path.join(pkg_share, 'rviz', 'tug_simulation.rviz')
+    # 4. Isolated RViz config
+    
+    src_dir = os.path.expanduser('~/flight_ws/src/aircraft_design')
+    rviz_config = os.path.join(src_dir, 'rviz', 'tug_simulation.rviz')
+    
+    # Create the file instantly if it doesn't exist yet, avoiding RViz crash
+    if not os.path.exists(rviz_config):
+        open(rviz_config, 'a').close()
     
     rviz_node = Node(
         package='rviz2',
