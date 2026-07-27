@@ -10,7 +10,7 @@ def generate_launch_description():
     # Get the package share directory
     pkg_share = get_package_share_directory('aircraft_design')
 
-    # 1. LOAD URDF STRICTLY FOR ROBOT STATE PUBLISHER (No GUI Slider!)
+    # 1. LOAD URDF STRICTLY FOR ROBOT STATE PUBLISHER 
     # Using xacro.process_file is cleaner and safer in ROS 2 than manual open()
     xacro_file = os.path.join(pkg_share, 'urdf', 'system.urdf.xacro')
     doc = xacro.process_file(xacro_file)
@@ -33,7 +33,7 @@ def generate_launch_description():
 
     # 3. START THE CSV PLAYER (Delayed by 3 seconds)
     # This delay allows RViz and Robot State Publisher to build the TF tree first,
-    # preventing "Frame [map] does not exist" errors on startup!
+    
     trajectory_player_node = TimerAction(
         period=3.0,
         actions=[

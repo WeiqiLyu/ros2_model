@@ -1,26 +1,73 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="tractor">
+
+    <!-- ===================================================================== -->
+    <!-- 1. MATERIAL DEFINITIONS                                               -->
+    <!-- Declared globally so they can be reused cleanly across the file.      -->
+    <!-- ===================================================================== -->
+    
+    <material name="dark_grey">
+        <color rgba="0.2 0.2 0.2 1.0"/>
+    </material>
+    
+    <material name="black">
+        <color rgba="0.1 0.1 0.1 1.0"/>
+    </material>
+    
+    <material name="grey">
+        <color rgba="0.6 0.6 0.6 1.0"/>
+    </material>
+
+    <!-- ===================================================================== -->
+    <!-- 2. LINK DEFINITIONS                                                   -->
+    <!-- ===================================================================== -->
+
+    <!-- TRACTOR BASE LINK (Main Body & Rear Wheels) -->
+    <!-- This serves as the root link for the tractor's kinematic chain. -->
     <link name="tractor_base_link">
+        
+        <!-- Tractor Chassis Visual -->
         <visual>
-            <geometry><mesh filename="package://aircraft_design/meshes/tractor_base.stl" scale="1 1 1"/></geometry>
-            <material name="dark_grey"><color rgba="0.2 0.2 0.2 1.0"/></material>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://aircraft_design/meshes/tractor_base.stl" scale="1 1 1"/>
+            </geometry>
+            <material name="dark_grey"/>
         </visual>
+        
+        <!-- Rear Wheels Visual -->
+        <!-- Grouped into the base_link visually to minimize TF overhead -->
         <visual>
-            <geometry><mesh filename="package://aircraft_design/meshes/rear_wheel_group.stl" scale="1 1 1"/></geometry>
-            <material name="black"><color rgba="0.1 0.1 0.1 1.0"/></material>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://aircraft_design/meshes/rear_wheel_group.stl" scale="1 1 1"/>
+            </geometry>
+            <material name="black"/>
         </visual>
     </link>
 
+    <!-- TRACTOR HITCH LINK (Clamping Mechanism) -->
+    <!-- This acts as the dynamic attachment point for the aircraft_nose_wheel_link -->
     <link name="tractor_hitch_link">
         <visual>
-            <geometry><mesh filename="package://aircraft_design/meshes/tractor_hitch.stl" scale="1 1 1"/></geometry>
-            <material name="grey"><color rgba="0.6 0.6 0.6 1.0"/></material>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="package://aircraft_design/meshes/tractor_hitch.stl" scale="1 1 1"/>
+            </geometry>
+            <material name="grey"/>
         </visual>
     </link>
 
+    <!-- ===================================================================== -->
+    <!-- 3. JOINT DEFINITIONS                                                  -->
+    <!-- ===================================================================== -->
+
+    <!-- JOINT: Tractor Base to Hitch -->
+    <!-- Places the hitch clamping mechanism exactly 0.023m forward on the X-axis -->
     <joint name="tractor_base_to_hitch" type="fixed">
         <parent link="tractor_base_link"/>
         <child link="tractor_hitch_link"/>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0.023 0 0" rpy="0 0 0"/>
     </joint>
+
 </robot>

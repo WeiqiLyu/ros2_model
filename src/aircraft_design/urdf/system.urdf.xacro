@@ -7,7 +7,7 @@
     <joint name="tow_joint" type="continuous">
         <parent link="tractor_hitch_link"/>
         <child link="aircraft_nose_wheel_link"/>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0.20028" rpy="0 0 0"/>
         <axis xyz="0 0 1"/>
     </joint>
 

@@ -43,6 +43,7 @@ symbolically linking /home/student/flight_ws/build/aircraft_design/urdf/tractor.
 symbolically linking /home/student/flight_ws/build/aircraft_design/urdf/system.urdf.xacro -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/urdf
 creating /home/student/flight_ws/install/aircraft_design/share/aircraft_design/rviz
 symbolically linking /home/student/flight_ws/build/aircraft_design/rviz/tug_simulation.rviz -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/rviz
+symbolically linking /home/student/flight_ws/build/aircraft_design/rviz/tug.rviz -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/rviz
 symbolically linking /home/student/flight_ws/build/aircraft_design/rviz/pushback.rviz -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/rviz
 symbolically linking /home/student/flight_ws/build/aircraft_design/rviz/config.rviz -> /home/student/flight_ws/install/aircraft_design/share/aircraft_design/rviz
 creating /home/student/flight_ws/install/aircraft_design/share/aircraft_design/data
