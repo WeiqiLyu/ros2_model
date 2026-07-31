@@ -17,8 +17,7 @@ def generate_launch_description():
     
     robot_description_content = ParameterValue(Command(['xacro ', xacro_file]), value_type=str)
     
-    # Isolated RViz config, saved to src/ (not install/) so Ctrl+S in RViz
-    # persists across colcon builds, regardless of workspace location/name.
+    
     ws_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(pkg_dir))))
     src_dir = os.path.join(ws_root, 'src', 'aircraft_design')
     rviz_config = os.path.join(src_dir, 'rviz', 'config.rviz')

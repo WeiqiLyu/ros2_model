@@ -230,13 +230,13 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /hangar_map
+        Value: /map
       Update Topic:
         Depth: 5
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /hangar_map_updates
+        Value: /map_updates
       Use Timestamp: false
       Value: true
     - Alpha: 1
@@ -270,7 +270,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: aircraft_base_link
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
@@ -285,25 +285,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/XYOrbit
-      Distance: 32.52669906616211
+      Distance: 106.55731201171875
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
+        X: -641.772216796875
+        Y: -655.455078125
         Z: 0
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: -0.03960160166025162
+      Pitch: 0.13848799467086792
       Target Frame: <Fixed Frame>
       Value: XYOrbit (rviz_default_plugins)
-      Yaw: 1.170399785041809
+      Yaw: 1.2210789918899536
     Saved: ~
 Window Geometry:
   Displays:

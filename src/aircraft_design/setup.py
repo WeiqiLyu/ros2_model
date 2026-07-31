@@ -33,17 +33,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'trajectory_player = aircraft_design.trajectory_player:main',
-            'path_publisher = aircraft_design.path_publisher:main',
-            'dynamic_pushback_planner = aircraft_design.dynamic_pushback_planner:main',
-            'simulation_inputs = aircraft_design.simulation_inputs:main',
-            'dynamic1_pushback_planner = aircraft_design.dynamic1_pushback_planner:main',
-            'dynamic2_pushback_planner = aircraft_design.dynamic2_pushback_planner:main',
-            'swept_path_mapper = aircraft_design.swept_path_mapper:main',
             'hangar_map_publisher = aircraft_design.hangar_map_publisher:main',
             'csv_trajectory_player = aircraft_design.csv_trajectory_player:main',
             'tug_trajectory_player = aircraft_design.tug_trajectory_player:main',
-            'dynamic_hangar_driver = aircraft_design.dynamic_hangar_driver:main',
             'hangar_dynamic_planner = aircraft_design.hangar_dynamic_planner:main',
         ],
     },
