@@ -19,6 +19,10 @@
   <exec_depend>tf2_ros</exec_depend>
   <exec_depend>nav2_map_server</exec_depend>
   <exec_depend>nav2_lifecycle_manager</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-opencv</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <exec_depend>python3-matplotlib</exec_depend>
 
   <!-- Test Dependencies -->
   <test_depend>ament_copyright</test_depend>

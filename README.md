@@ -32,7 +32,6 @@ A ROS 2 Humble simulation and visualization workspace for autonomous aircraft gr
 ## Preview
 
 <p align="center">
-  <!-- TODO: add an animated preview (gif) once the remaining simulation work is finished -->
   <img src="preview.gif" width="800" alt="Simulation Preview Animation"/>
 </p>
 
@@ -51,6 +50,12 @@ Install the ROS 2 package dependencies:
 sudo apt install ros-humble-robot-state-publisher ros-humble-joint-state-publisher-gui \
                   ros-humble-rviz2 ros-humble-tf2-ros ros-humble-xacro \
                   ros-humble-nav2-map-server ros-humble-nav2-lifecycle-manager
+```
+
+Install the Python dependencies used by the map publisher and physics engine (map image processing, JSON/YAML parsing, and plotting):
+
+```bash
+pip3 install numpy opencv-python pyyaml matplotlib
 ```
 
 Clone the workspace and build it (works from any directory/username — no hardcoded paths):
