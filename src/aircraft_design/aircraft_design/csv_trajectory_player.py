@@ -4,6 +4,7 @@ from rclpy.node import Node
 import csv
 import math
 import os
+from ament_index_python.packages import get_package_share_directory
 
 from geometry_msgs.msg import TransformStamped, Point
 from sensor_msgs.msg import JointState
@@ -30,7 +31,8 @@ class CSVTrajectoryPlayer(Node):
         
         # Load Active CSV File
         filename = 'trajectories.csv'
-        self.csv_path = os.path.expanduser(f'~/flight_ws/src/aircraft_design/data/{filename}')
+        pkg_share = get_package_share_directory('aircraft_design')
+        self.csv_path = os.path.join(pkg_share, 'data', filename)
         self.recorded_data = []
         
         with open(self.csv_path, 'r', encoding='utf-8-sig') as f:

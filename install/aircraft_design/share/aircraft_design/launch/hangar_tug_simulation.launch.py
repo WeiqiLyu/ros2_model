@@ -1,1 +1,0 @@
-/home/student/flight_ws/build/aircraft_design/launch/hangar_tug_simulation.launch.py

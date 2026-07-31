@@ -183,7 +183,10 @@ class HangarDynamicPlanner(Node):
 
     def save_to_csv(self):
         file_name = f"hangar_dynamic_{self.scenario_name.replace(' ', '_')}.csv"
-        workspace_src_data = os.path.expanduser('~/flight_ws/src/aircraft_design/data')
+        # Write into src/ (not the install/ copy) so results are version-controlled
+        # and survive the next colcon build, regardless of workspace location/name.
+        ws_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(self.pkg_dir))))
+        workspace_src_data = os.path.join(ws_root, 'src', 'aircraft_design', 'data')
         if not os.path.exists(workspace_src_data):
             os.makedirs(workspace_src_data)
         csv_path = os.path.join(workspace_src_data, file_name)

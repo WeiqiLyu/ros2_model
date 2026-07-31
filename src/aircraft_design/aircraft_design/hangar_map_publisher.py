@@ -7,14 +7,16 @@ import yaml
 import cv2
 import numpy as np
 import os
+from ament_index_python.packages import get_package_share_directory
 
 class HangarMapPublisher(Node):
     def __init__(self):
         super().__init__('hangar_map_publisher')
         qos = QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL)
         self.map_pub = self.create_publisher(OccupancyGrid, '/map', qos)
-        
-        self.map_dir = os.path.expanduser('~/flight_ws/src/aircraft_design/maps')
+
+        pkg_share = get_package_share_directory('aircraft_design')
+        self.map_dir = os.path.join(pkg_share, 'maps')
         self.yaml_path = os.path.join(self.map_dir, 'halle_straight_map.yaml')
         self.load_and_publish_map()
         

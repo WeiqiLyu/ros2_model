@@ -1,1 +1,0 @@
-/home/student/flight_ws/build/aircraft_design/launch/system.launch.py

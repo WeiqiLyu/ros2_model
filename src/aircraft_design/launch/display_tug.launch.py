@@ -26,7 +26,8 @@ def generate_launch_description():
     )
 
     # Isolated RViz config (Forced to SRC directory so Ctrl+S saves permanently!)
-    src_dir = os.path.expanduser('~/flight_ws/src/aircraft_design')
+    ws_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(pkg_share))))
+    src_dir = os.path.join(ws_root, 'src', 'aircraft_design')
     rviz_config = os.path.join(src_dir, 'rviz', 'tug.rviz')
     
     # Create the file instantly if it doesn't exist yet, avoiding RViz crash
