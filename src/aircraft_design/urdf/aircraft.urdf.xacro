@@ -1,26 +1,6 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="aircraft">
-
-    <!-- ===================================================================== -->
-    <!-- 1. PHYSICAL & KINEMATIC PARAMETERS                                    -->
-    <!-- Derived directly from the Blender CAD measurements.                   -->
-    <!-- ===================================================================== -->
-    
-    <!-- L_2: Longitudinal distance from Nose Axle to Main Landing Gear (MLG) Axle -->
-    <xacro:property name="L_2" value="8.146" /> 
-    
-    <!-- L_landing: Total track width (Y-axis offset between Left & Right MLG) -->
-    <!-- 2.01545m left + 2.01545m right = 4.0309m -->
-    <xacro:property name="L_landing" value="4.0309" /> 
-    
-    <xacro:property name="PI" value="3.14159265359" />
-    
-    <!-- dz: Vertical height difference between the Nose Axle and MLG Axle -->
-    <!-- MLG axle is higher (+Z relative to nose wheel axle) -->
-    <xacro:property name="dz" value="0.1515" /> 
-
-    <!-- ===================================================================== -->
-    <!-- 2. LINK DEFINITIONS                                                   -->
+    <!-- 1. LINK DEFINITIONS                                                   -->
     <!-- All visual origins stay at (0,0,0) with (0,0,0) rotation    -->
     <!-- because the origins and pitch were permanently made into the STLs!   -->
     <!-- ===================================================================== -->
@@ -74,16 +54,15 @@
     </link>
 
     <!-- ===================================================================== -->
-    <!-- 3. JOINT DEFINITIONS                                                  -->
+    <!-- 2. JOINT DEFINITIONS                                                  -->
     <!-- Tree structure: tractor_hitch -> nose_wheel -> base_link -> MLGs      -->
     <!-- ===================================================================== -->
 
     <!-- JOINT: Nose Wheel to Base Link -->
-    <!-- Base link is BEHIND (-X) and HIGHER (+Z) than the nose wheel axle. -->
     <joint name="aircraft_nose_to_base" type="fixed">
         <parent link="aircraft_nose_wheel_link"/>
         <child link="aircraft_base_link"/>
-        <origin xyz="-${L_2} -0.031327 ${dz}" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
     </joint>
 
     <!-- JOINT: Base Link to Left Main Landing Gear -->
@@ -91,7 +70,7 @@
     <joint name="aircraft_base_to_left_mlg" type="fixed">
         <parent link="aircraft_base_link"/>
         <child link="aircraft_left_mlg_link"/>
-        <origin xyz="0 ${L_landing/2} 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
     </joint>
 
@@ -99,7 +78,7 @@
     <joint name="aircraft_base_to_right_mlg" type="fixed">
         <parent link="aircraft_base_link"/>
         <child link="aircraft_right_mlg_link"/>
-        <origin xyz="0 -${L_landing/2} 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
         <axis xyz="0 1 0"/>
     </joint>
 
